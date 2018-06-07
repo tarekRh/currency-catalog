@@ -1,0 +1,28 @@
+<div>
+  <input (keyup.enter)="searchList()" type="text" name="searchKey" class="input-class" placeholder="Votre recherche"
+         [(ngModel)]="searchKey"/>
+  <select class="input-class select-class" [(ngModel)]="currentSelectOption" (change)="searchList()">
+    <option *ngFor="let option of filterOptions" [value]="option">{{ option }}</option>
+  </select>
+</div>
+<div class="currencies-list">
+  <mat-grid-list [cols]="columnsNumber" rowHeight="120px">
+    <mat-grid-tile
+      class="currency"
+      [routerLink]="'/currency/'+currency.id"
+      *ngFor="let currency of currencies"
+      colspan="1"
+      rowspan="1">
+      <div>
+        <span>ID:{{currency.id}}</span>&nbsp;&nbsp;
+        <span>Type:{{currency.attributes.currency_type}}</span>&nbsp;&nbsp;
+        <span>National Symbol:{{currency.attributes.native_symbol}}</span>
+      </div>
+    </mat-grid-tile>
+  </mat-grid-list>
+  <mat-paginator *ngIf="pageState" [length]="pageState.totalItems"
+                 [pageSize]="10"
+                 [pageSizeOptions]="[10, 20, 100]"
+                 (page)="pageEvent = handlePage($event)">
+  </mat-paginator>
+</div>

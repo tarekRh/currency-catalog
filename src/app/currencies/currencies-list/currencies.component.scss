@@ -1,0 +1,22 @@
+
+.input-class {
+  width: 30%;
+  height: 40px;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius:  4px;
+  border: 2px solid rgb(211, 208, 208);
+  padding-left: 28px;
+}
+
+.select-class{
+  height: 46px;
+}
+
+.currencies-list {
+  margin-top: 40px;
+}
+.currency {
+  display: inline-block;
+  width: 15% !important;
+  border: solid 1px gray;
+}

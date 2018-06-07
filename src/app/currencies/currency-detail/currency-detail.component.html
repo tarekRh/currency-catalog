@@ -1,0 +1,11 @@
+<div *ngIf="currency">
+  <h2>{{currency.id}}</h2>
+  <ul>
+    <li>code: {{currency.attributes.code}}</li>
+    <li>name: {{currency.attributes.name}}</li>
+    <li>currency_type: {{currency.attributes.currency_type}}</li>
+    <li>code_iso_numeric3: {{currency.attributes.code_iso_numeric3}}</li>
+    <li>code_iso_alpha3: {{currency.attributes.code_iso_alpha3}}</li>
+  </ul>
+  <button mat-button routerLink="/currencies">Retour</button>
+</div>
